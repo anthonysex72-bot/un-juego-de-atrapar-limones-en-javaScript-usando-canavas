@@ -157,7 +157,21 @@ function detectarColicion(){
        limonX<personajeX+ANCHO_PERSONAJE &&
        limonY+ALTO_LIMON>personajeY &&
        limonY<personajeY+ALTURA_PERSONAJE){
-       
-        alert("atrapado");
+       aparecerLimon();
+        
     }
+}
+
+
+
+function probarAletorio(){
+    let aleatorio=generarAleatorio(10,80);
+    console.log(aleatorio);
+
+}
+
+function aparecerLimon(){
+    limonY=generarAleatorio(0,canvas.height-ALTURA_SUELO-ALTO_LIMON);
+    limonX=limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
+    actualizaPantalla();
 }
