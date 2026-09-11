@@ -21,12 +21,15 @@ const ALTO_LIMON=20;
 
 
 function iniciar() {
+    clearInterval(intervalo);
     intervalo=setInterval(bajarLimon,velocidadCaida);
+
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
-
 }
+
+
 
 
 function dibujarSuelo() {
@@ -200,4 +203,13 @@ function detectarPiso(){
     }
 
 
+    }
+
+    function reiniciar(){
+        vidas=3;
+        puntage=0;
+
+        mostrarEnSpan("txtVidas",vidas);
+        mostrarEnSpan("txtPuntaje",puntage);
+        iniciar();
     }
