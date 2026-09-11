@@ -7,8 +7,9 @@ const ALTURA_PERSONAJE = 60;
 const ANCHO_PERSONAJE = 40;
 
 let personajeX = canvas.width / 2;
+let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE);
 let limonX=canvas.width/2;
-let limonY=0;
+let limonY=360;
 
 const ANCHO_LIMON=20;
 const ALTO_LIMON=20;
@@ -38,9 +39,6 @@ function dibujarSuelo() {
 
 
 function dibujarPersonaje() {
-
-    // Posición base Y
-    const personajeY = canvas.height - (ALTURA_SUELO + ALTURA_PERSONAJE);
 
     // Matriz de 20x21 del pixel art
     const sprite = [
@@ -79,11 +77,9 @@ function dibujarPersonaje() {
     const columnas = 20;
     const filas = 21;
 
-    // Tamaño de cada pixel
     const pixelWidth = ANCHO_PERSONAJE / columnas;
     const pixelHeight = ALTURA_PERSONAJE / filas;
 
-    // Dibujar personaje pixel por pixel
     for (let r = 0; r < filas; r++) {
 
         for (let c = 0; c < columnas; c++) {
@@ -106,12 +102,12 @@ function dibujarPersonaje() {
     }
 }
 
-
 function moverIzquierda() {
 
     personajeX = personajeX - 10;
 
     actualizaPantalla();
+    detectarColicion();
 
 }
 
@@ -121,6 +117,7 @@ function moverDerecha() {
     personajeX = personajeX + 10;
 
     actualizaPantalla();
+    detectarColicion();
 
 }
 
@@ -151,5 +148,16 @@ function dibujarLimon(){
 function bajarLimon(){
     limonY= limonY + 10;
     actualizaPantalla();
+    detectarColicion();
 
+}
+
+function detectarColicion(){
+    if(limonX+ANCHO_LIMON>personajeX && 
+       limonX<personajeX+ANCHO_PERSONAJE &&
+       limonY+ALTO_LIMON>personajeY &&
+       limonY<personajeY+ALTURA_PERSONAJE){
+       
+        alert("atrapado");
+    }
 }
