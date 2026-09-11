@@ -12,6 +12,7 @@ let limonX=canvas.width/2;
 let limonY=360;
 let puntage=0;
 let vidas=3;
+let velocidadCaida=50;
 
 
 const ANCHO_LIMON=20;
@@ -19,7 +20,7 @@ const ALTO_LIMON=20;
 
 
 function iniciar() {
-
+    setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     dibujarLimon();
@@ -110,7 +111,7 @@ function moverIzquierda() {
     personajeX = personajeX - 10;
 
     actualizaPantalla();
-    detectarColicion();
+    detectarAtrapado();
 
 }
 
@@ -120,7 +121,7 @@ function moverDerecha() {
     personajeX = personajeX + 10;
 
     actualizaPantalla();
-    detectarColicion();
+    detectarAtrapado();
 
 }
 
@@ -186,6 +187,9 @@ function detectarPiso(){
         aparecerLimon();
         vidas=vidas-1;
         mostrarEnSpan("txtVidas",vidas);
+        if(vidas==0){
+            alert("GAME OVER");
+        }
     }
 
 
