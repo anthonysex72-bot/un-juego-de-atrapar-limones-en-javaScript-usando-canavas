@@ -1,15 +1,11 @@
-function generarAleatorio(min,max){
-    let random=Math.random();
-    let numero=random*(max-min);
-    let numeroEntero=Math.ceil(numero);
-    numeroEntero=numeroEntero+min;
-    return numeroEntero;
+function generarAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function mostrarEnSpan(idSpan, valor){
+function mostrarEnSpan(idSpan, valor) {
+  const componente = document.getElementById(idSpan);
 
-    let componente=document.getElementById(idSpan);
-
-    componente.textContent=valor;
-
+  if (componente) {
+    componente.textContent = valor;
+  }
 }

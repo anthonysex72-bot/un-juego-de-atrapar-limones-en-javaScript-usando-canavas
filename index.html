@@ -1,29 +1,107 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Caza Estrellas</title>
+
   <link rel="stylesheet" href="limones.css">
- 
 </head>
+
 <body onload="iniciar()">
+
   <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>anthony regalado</h2>
-    <canvas id="areaJuego" width="600" height="700"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-      <button onclick=" probarAletorio()">Probar aleatorio</button>
-    </div>
+
+    <header class="encabezado">
+      <div class="etiqueta">★ ARCADE GAME ★</div>
+
+      <h1>Atrapar Limones</h1>
+
+      <p class="subtitulo">
+        Si del cielo te caen limones...
+        ¡atrápalos antes de que caigan!
+      </p>
+
+      <h2>ANTHONY REGALADO</h2>
+    </header>
+
+
+    <main>
+
+      <div class="marco-juego">
+
+        <div class="estado-juego">
+          <div class="estado">
+            <span class="icono">🏆</span>
+            <span class="titulo-estado">PUNTAJE</span>
+            <span id="txtPuntaje">0</span>
+          </div>
+
+          <div class="separador"></div>
+
+          <div class="estado">
+            <span class="icono">❤️</span>
+            <span class="titulo-estado">VIDAS</span>
+            <span id="txtVidas">3</span>
+          </div>
+        </div>
+
+        <canvas id="areaJuego" width="600" height="700"></canvas>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="estadistica">
+          <span>PUNTAJE</span>
+          <strong id="txtPuntaje">0</strong>
+        </div>
+
+        <div class="estadistica">
+          <span>VIDAS</span>
+          <strong id="txtVidas">3</strong>
+        </div>
+
+      </div>
+
+
+      <div class="botones">
+
+        <button class="btn btn-izquierda" onclick="moverIzquierda()">
+          ◀ Izquierda
+        </button>
+
+        <button class="btn btn-derecha" onclick="moverDerecha()">
+          Derecha ▶
+        </button>
+
+        <button class="btn btn-reiniciar" onclick="reiniciar()">
+          ↻ Reiniciar
+        </button>
+
+        <button class="btn btn-aleatorio" onclick="probarAletorio()">
+          ✦ Probar aleatorio
+        </button>
+
+      </div>
+
+    </main>
+
+
+    <footer>
+      <p>CAZA ESTRELLAS • DESARROLLO WEB</p>
+    </footer>
+
   </div>
-  <link rel="stylesheet" href="limones.css">
+
+
   <script src="limones.js"></script>
   <script src="utils.js"></script>
+
 </body>
 </html>
+```
