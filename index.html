@@ -1,107 +1,77 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Caza Estrellas</title>
-
+  <title>CAZANDO LIMONES CON LUFFY</title>
   <link rel="stylesheet" href="limones.css">
 </head>
 
 <body onload="iniciar()">
 
+  <div class="fondo-estrellas"></div>
+
   <div class="contenedor">
 
     <header class="encabezado">
-      <div class="etiqueta">★ ARCADE GAME ★</div>
-
-      <h1>Atrapar Limones</h1>
-
-      <p class="subtitulo">
-        Si del cielo te caen limones...
-        ¡atrápalos antes de que caigan!
-      </p>
-
+      <div class="badge">★ ARCADE • LEVEL UP ★</div>
+      <h1>CAZANDO LIMONES CON LUFFY</h1>
+      <p class="subtitulo">Atrapa los limones y sobrevive el mayor tiempo posible</p>
       <h2>ANTHONY REGALADO</h2>
     </header>
 
-
-    <main>
-
-      <div class="marco-juego">
-
-        <div class="estado-juego">
-          <div class="estado">
-            <span class="icono">🏆</span>
-            <span class="titulo-estado">PUNTAJE</span>
-            <span id="txtPuntaje">0</span>
-          </div>
-
-          <div class="separador"></div>
-
-          <div class="estado">
-            <span class="icono">❤️</span>
-            <span class="titulo-estado">VIDAS</span>
-            <span id="txtVidas">3</span>
-          </div>
-        </div>
-
-        <canvas id="areaJuego" width="600" height="700"></canvas>
-
-      </div>
-
-
-      <div class="panel">
-
-        <div class="estadistica">
-          <span>PUNTAJE</span>
+    <section class="hud">
+      <div class="hud-item">
+        <span class="hud-icon">🏆</span>
+        <div>
+          <span class="hud-label">PUNTAJE</span>
           <strong id="txtPuntaje">0</strong>
         </div>
+      </div>
 
-        <div class="estadistica">
-          <span>VIDAS</span>
+      <div class="hud-item">
+        <span class="hud-icon">❤️</span>
+        <div>
+          <span class="hud-label">VIDAS</span>
           <strong id="txtVidas">3</strong>
         </div>
-
       </div>
 
+      <div class="hud-item">
+        <span class="hud-icon">⚡</span>
+        <div>
+          <span class="hud-label">NIVEL</span>
+          <strong id="txtNivel">1</strong>
+        </div>
+      </div>
+    </section>
 
-      <div class="botones">
-
-        <button class="btn btn-izquierda" onclick="moverIzquierda()">
-          ◀ Izquierda
-        </button>
-
-        <button class="btn btn-derecha" onclick="moverDerecha()">
-          Derecha ▶
-        </button>
-
-        <button class="btn btn-reiniciar" onclick="reiniciar()">
-          ↻ Reiniciar
-        </button>
-
-        <button class="btn btn-aleatorio" onclick="probarAletorio()">
-          ✦ Probar aleatorio
-        </button>
-
+    <main class="zona-juego">
+      <div class="marco-canvas">
+        <canvas id="areaJuego" width="600" height="700"></canvas>
       </div>
 
+      <div class="controles">
+        <div class="tecla">←</div>
+        <div class="instrucciones">
+          <strong>CONTROLES</strong>
+          <span>Usa solamente ← y → para dirigir al personaje</span>
+        </div>
+        <div class="tecla">→</div>
+      </div>
+
+      <button class="btn-reiniciar" onclick="reiniciar()">↻ REINICIAR PARTIDA</button>
     </main>
 
-
     <footer>
-      <p>CAZA ESTRELLAS • DESARROLLO WEB</p>
+      <span>CAZA ESTRELLAS</span>
+      <span>•</span>
+      <span>HTML • CSS • JAVASCRIPT</span>
     </footer>
 
   </div>
 
-
   <script src="limones.js"></script>
   <script src="utils.js"></script>
-
 </body>
 </html>
-```
