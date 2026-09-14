@@ -1,77 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAZANDO LIMONES CON LUFFY</title>
-  <link rel="stylesheet" href="limones.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CAZANDO LIMONES CON LUFFY</title>
+
+    <link
+        rel="stylesheet"
+        href="limones.css"
+    >
+
 </head>
+
 
 <body onload="iniciar()">
 
-  <div class="fondo-estrellas"></div>
 
-  <div class="contenedor">
+    <div class="fondo"></div>
 
-    <header class="encabezado">
-      <div class="badge">★ ARCADE • LEVEL UP ★</div>
-      <h1>CAZANDO LIMONES CON LUFFY</h1>
-      <p class="subtitulo">Atrapa los limones y sobrevive el mayor tiempo posible</p>
-      <h2>ANTHONY REGALADO</h2>
-    </header>
 
-    <section class="hud">
-      <div class="hud-item">
-        <span class="hud-icon">🏆</span>
-        <div>
-          <span class="hud-label">PUNTAJE</span>
-          <strong id="txtPuntaje">0</strong>
-        </div>
-      </div>
+    <div class="contenedor">
 
-      <div class="hud-item">
-        <span class="hud-icon">❤️</span>
-        <div>
-          <span class="hud-label">VIDAS</span>
-          <strong id="txtVidas">3</strong>
-        </div>
-      </div>
 
-      <div class="hud-item">
-        <span class="hud-icon">⚡</span>
-        <div>
-          <span class="hud-label">NIVEL</span>
-          <strong id="txtNivel">1</strong>
-        </div>
-      </div>
-    </section>
+        <!-- ======================================
+             ENCABEZADO
+        ======================================= -->
 
-    <main class="zona-juego">
-      <div class="marco-canvas">
-        <canvas id="areaJuego" width="600" height="700"></canvas>
-      </div>
+        <header class="encabezado">
 
-      <div class="controles">
-        <div class="tecla">←</div>
-        <div class="instrucciones">
-          <strong>CONTROLES</strong>
-          <span>Usa solamente ← y → para dirigir al personaje</span>
-        </div>
-        <div class="tecla">→</div>
-      </div>
+            <div class="marca">
+                <span class="marca-punto"></span>
+                ARCADE GAME
+            </div>
 
-      <button class="btn-reiniciar" onclick="reiniciar()">↻ REINICIAR PARTIDA</button>
-    </main>
 
-    <footer>
-      <span>CAZA ESTRELLAS</span>
-      <span>•</span>
-      <span>HTML • CSS • JAVASCRIPT</span>
-    </footer>
+            <h1>
+                CAZANDO LIMONES
+                <span>CON LUFFY</span>
+            </h1>
 
-  </div>
 
-  <script src="limones.js"></script>
-  <script src="utils.js"></script>
+            <p class="subtitulo">
+                Atrapa los limones. Sobrevive. Llega a 30.
+            </p>
+
+
+            <div class="autor">
+                DESARROLLADO POR
+                <strong>ANTHONY REGALADO</strong>
+            </div>
+
+        </header>
+
+
+
+        <!-- ======================================
+             HUD
+        ======================================= -->
+
+        <section class="hud">
+
+
+            <div class="hud-item">
+
+                <div class="hud-icon amarillo">
+                    ★
+                </div>
+
+                <div class="hud-info">
+
+                    <span>
+                        PUNTAJE
+                    </span>
+
+                    <strong id="txtPuntaje">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hud-item">
+
+                <div class="hud-icon rojo">
+                    ♥
+                </div>
+
+                <div class="hud-info">
+
+                    <span>
+                        VIDAS
+                    </span>
+
+                    <strong id="txtVidas">
+                        3
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hud-item">
+
+                <div class="hud-icon azul">
+                    ⚡
+                </div>
+
+                <div class="hud-info">
+
+                    <span>
+                        NIVEL
+                    </span>
+
+                    <strong id="txtNivel">
+                        1
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             JUEGO
+        ======================================= -->
+
+        <main class="zona-juego">
+
+
+            <div class="etiqueta-juego">
+
+                <span>
+                    ● EN JUEGO
+                </span>
+
+                <span>
+                    META: 30 LIMONES
+                </span>
+
+            </div>
+
+
+            <div class="marco-canvas">
+
+                <canvas
+                    id="areaJuego"
+                    width="1200"
+                    height="600"
+                ></canvas>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 CONTROLES
+            =================================== -->
+
+            <div class="panel-controles">
+
+
+                <div class="grupo-control">
+
+                    <span class="titulo-control">
+                        MOVIMIENTO
+                    </span>
+
+
+                    <div class="teclas">
+
+                        <div class="tecla">
+                            ←
+                        </div>
+
+                        <div class="tecla">
+                            →
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="separador"></div>
+
+
+
+                <div class="grupo-control">
+
+                    <span class="titulo-control">
+                        SALTO
+                    </span>
+
+
+                    <div class="teclas">
+
+                        <div class="tecla tecla-ancha">
+                            SPACE
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="separador"></div>
+
+
+
+                <div class="grupo-control">
+
+                    <span class="titulo-control">
+                        CUELLO
+                    </span>
+
+
+                    <div class="teclas">
+
+                        <div class="tecla tecla-especial">
+                            A
+                        </div>
+
+                        <span class="flecha-cuello">
+                            ←
+                        </span>
+
+
+                        <div class="tecla tecla-especial">
+                            D
+                        </div>
+
+                        <span class="flecha-cuello">
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ==================================
+                 EXPLICACIÓN
+            =================================== -->
+
+            <div class="instrucciones">
+
+                <div>
+                    <strong>
+                        ← →
+                    </strong>
+                    Mover personaje
+                </div>
+
+
+                <div>
+                    <strong>
+                        SPACE
+                    </strong>
+                    Saltar
+                </div>
+
+
+                <div>
+                    <strong>
+                        A / D
+                    </strong>
+                    Estirar cuello
+                </div>
+
+
+                <div>
+                    <strong>
+                        ENTER
+                    </strong>
+                    Reiniciar al terminar
+                </div>
+
+            </div>
+
+
+
+            <button
+                class="btn-reiniciar"
+                onclick="reiniciar()"
+            >
+
+                <span>↻</span>
+
+                NUEVA PARTIDA
+
+            </button>
+
+
+        </main>
+
+
+
+        <!-- ======================================
+             FOOTER
+        ======================================= -->
+
+        <footer>
+
+            <span>
+                CAZANDO LIMONES
+            </span>
+
+            <span class="footer-punto">
+                •
+            </span>
+
+            <span>
+                HTML
+            </span>
+
+            <span>
+                CSS
+            </span>
+
+            <span>
+                JAVASCRIPT
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="utils.js"></script>
+
+    <script src="limones.js"></script>
+
+
 </body>
+
 </html>
